@@ -1,0 +1,25 @@
+<div class="container">
+<center>
+  <div class="jumbotron">
+  <h1>Add a new Url</h1>
+  <%= form_for @short_url do |form| %>
+
+  <p>
+    <%= form.label :url, "Your URL:" %></br>
+    <%= form.text_field :url, :value => 'http://' %>
+  </p>
+
+  <% if @short_url.errors[:url].any? %>
+    <p class="error-messages">
+      The gives url <%= @short_url.errors[:url].to_sentence %>.
+    </p>
+  <% end %>
+
+  <p>
+    <%= form.submit "Shorten my URL" %>
+  </p>
+
+  <% end %>
+</div>
+</center>
+</div>
